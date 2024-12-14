@@ -1,19 +1,19 @@
-<html>
- <head>
-  <title>
-   TV WebOS System - Settings
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV WebOS System - Settings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             background-color: #000;
             color: #fff;
-            cursor: url('cursour.png'), auto;
+            cursor: url('cursor.png'), auto;
         }
         .header {
             display: flex;
@@ -82,97 +82,173 @@
         .content .section .item p {
             margin-top: 10px;
         }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="logo">
-    <img src="webos.png" style="height: 42px; width: auto;" alt="webos logo">
-   </div>
-   <div class="search-bar">
-    <input placeholder="Search..." type="text"/>
-    <button>
-     <i class="fas fa-search">
-     </i>
-    </button>
-   </div>
-  </div>
-  <div class="nav">
-   <a href="home.html">
-    Home
-   </a>
-   <a href="#">
-    Live TV
-   </a>
-   <a href="#">
-    Movies
-   </a>
-   <a href="#">
-    TV Shows
-   </a>
-   <a href="apps.html">
-    Apps
-   </a>
-   <a href="settings.html">
-    Settings
-   </a>
-  </div>
-  <div class="content">
-   <div class="section">
-    <h2>
-     Useful Settings
-    </h2>
-    <div class="items">
-     <div class="item">
-      <img alt="Network settings icon with a Wi-Fi symbol" height="300" src="https://storage.googleapis.com/a1aa/image/0lIhtAiBinK5GBn4M9mT0FazMVIgA1WcfV8dXlJqat8yER9JA.jpg" width="200"/>
-      <p>
-       Network Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Display settings icon with a monitor and brightness symbol" height="300" src="https://storage.googleapis.com/a1aa/image/4hvhSGmZ4FLOGV2JgE4ascxnGO8CHDWzkCF4yAngTllrioeJA.jpg" width="200"/>
-      <p>
-       Display Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Sound settings icon with a speaker and sound waves" height="300" src="https://storage.googleapis.com/a1aa/image/zBpy0AyZoLbXKVrFNkaHO2zH5SphKuLBS4zNiLg29kKrioeJA.jpg" width="200"/>
-      <p>
-       Sound Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Account settings icon with a user profile symbol" height="300" src="https://storage.googleapis.com/a1aa/image/DdD3n20EN7qyEBehUlFB90ugG1QycF8qaoGxJyzs7sxUFR9JA.jpg" width="200"/>
-      <p>
-       Account Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Privacy settings icon with a lock symbol" height="300" src="https://storage.googleapis.com/a1aa/image/LqU14yVn0rpFLdYqGK2MfDpjOsO4ItvFeNk6E0AOyd7oKi6TA.jpg" width="200"/>
-      <p>
-       Privacy Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="System update settings icon with a gear and refresh symbol" height="300" src="https://storage.googleapis.com/a1aa/image/p67J2MyYHcqcGtpPKhfpBxnUwy7PcZJPLEGjlPkNwdVTFR9JA.jpg" width="200"/>
-      <p>
-       System Update
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Language settings icon with a globe and language symbols" height="300" src="https://storage.googleapis.com/a1aa/image/TW8csQN3fbQNQyAw7ndrL2fQB15vJMJXQXZBsos28SrrKi6TA.jpg" width="200"/>
-      <p>
-       Language Settings
-      </p>
-     </div>
-     <div class="item">
-      <img alt="Parental control settings icon with a shield and family symbol" height="300" src="https://storage.googleapis.com/a1aa/image/CYe1EInCRlWaSivk0gZZBkOQ42XxYFWGi773ySwfj9dnKi6TA.jpg" width="200"/>
-      <p>
-       Parental Controls
-      </p>
-     </div>
+        /* Темная тема */
+        body.dark-theme {
+            background-color: #121212;
+            color: #fff;
+        }
+        /* Светлая тема */
+        body.light-theme {
+            background-color: #f9f9f9;
+            color: #000;
+        }
+        .success-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .settings-button {
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .settings-button:hover {
+            background-color: #555;
+        }
+
+        .settings-nav a {
+            display: block;
+            padding: 10px;
+            background-color: #444;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .settings-nav a:hover {
+            background-color: #666;
+        }
+
+        .settings-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .settings-container .section {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="webos.png" style="height: 42px; width: auto;" alt="webos logo">
+        </div>
+        <div class="search-bar">
+            <input placeholder="Search..." type="text"/>
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
     </div>
-   </div>
-  </div>
- </body>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Live TV</a>
+        <a href="#">Movies</a>
+        <a href="#">TV Shows</a>
+        <a href="apps.html">Apps</a>
+        <a href="settings.html">Settings</a>
+        <a href="https://www.google.com">Browser</a>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>Settings</h2>
+            <div class="settings-nav">
+                <a href="#theme-settings" onclick="openSettings('theme')">Theme Settings</a>
+                <a href="#network-settings" onclick="openSettings('network')">Network Settings</a>
+                <a href="#quality-settings" onclick="openSettings('quality')">Quality Settings</a>
+                <a href="#other-settings" onclick="openSettings('other')">Other Settings</a>
+            </div>
+        </div>
+
+        <!-- Раздел настроек -->
+        <div id="theme-settings" class="settings-container" style="display:none;">
+            <div class="section">
+                <h3>Theme Settings</h3>
+                <label for="theme-select">Select Theme: </label>
+                <select id="theme-select">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+                <button onclick="saveThemeSettings()">Save Theme</button>
+            </div>
+        </div>
+
+        <!-- Остальная часть контента -->
+        <div id="network-settings" class="settings-container" style="display:none;">
+            <!-- Настройки сети -->
+        </div>
+
+        <div id="quality-settings" class="settings-container" style="display:none;">
+            <!-- Настройки качества -->
+        </div>
+
+        <div id="other-settings" class="settings-container" style="display:none;">
+            <!-- Прочие настройки -->
+        </div>
+    </div>
+
+    <script>
+        // Функция для переключения видимости секций
+        function openSettings(settingType) {
+            const allSections = document.querySelectorAll('.settings-container');
+            allSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const targetSection = document.getElementById(settingType + '-settings');
+            if (targetSection) {
+                targetSection.style.display = 'flex';
+            }
+        }
+
+        // Функция для сохранения настроек темы
+        function saveThemeSettings() {
+            const themeSelect = document.getElementById('theme-select');
+            const selectedTheme = themeSelect.value;
+
+            // Сохраняем выбранную тему в localStorage
+            localStorage.setItem('theme', selectedTheme);
+
+            applyTheme(selectedTheme);
+        }
+
+        // Функция для применения темы
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else {
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+            }
+        }
+
+        // При загрузке страницы проверяем сохраненную тему
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+                document.getElementById('theme-select').value = savedTheme;
+            }
+        });
+    </script>
+
+</body>
 </html>

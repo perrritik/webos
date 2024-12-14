@@ -1,281 +1,136 @@
 <html>
- <head>
-  <title>
-   TV WebOS System
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            background-color: #000;
-            color: #fff;
-            cursor: url('cursour.png'), auto;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #1a1a1a;
-        }
-        .header .logo {
-            font-size: 24px;
-            font-weight: 700;
-        }
-        .header .search-bar {
-            display: flex;
-            align-items: center;
-        }
-        .header .search-bar input {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .header .search-bar button {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-        }
-        .nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px 0;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .nav a:hover {
-            background-color: #555;
-        }
-        .content {
-            padding: 20px;
-        }
-        .content .section {
-            margin-bottom: 40px;
-        }
-        .content .section h2 {
-            margin-bottom: 20px;
-        }
-        .content .section .items {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .content .section .item {
-            width: 200px;
-            margin: 10px;
-            text-align: center;
-        }
-        .content .section .item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .content .section .item p {
-            margin-top: 10px;
-        }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="logo">
-    <img src="webos.png" style="height: 42px; width: auto;" alt="webos logo">
-   </div>
-   <div class="search-bar">
-    <input placeholder="Search..." type="text"/>
-    <button>
-     <i class="fas fa-search">
-     </i>
-    </button>
-   </div>
-  </div>
-  <div class="nav">
-    <a href="home.html">
-     Home
-    </a>
-    <a href="#">
-     Live TV
-    </a>
-    <a href="movies.html">
-     Movies
-    </a>
-    <a href="#">
-     TV Shows
-    </a>
-    <a href="apps.html">
-     Apps
-    </a>
-    <a href="settings.html">
-     Settings
-    </a>
-   </div>
-  <div class="content">
-   <div class="section">
-    <h2>
-     Featured
-    </h2>
-    <div class="items">
-     <div class="item">
-      <a href="https://kinogo.ec/film/featured-movie-1">
-        <img alt="Featured Movie 1" height="300" src="https://storage.googleapis.com/a1aa/image/qicSfWiWaAXdFaRLUz0003mGU5kCzd9C6WP8QTUIIvLwER9JA.jpg" width="200"/>
-        <p>
-         Featured Movie 1
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/film/featured-movie-2">
-        <img alt="Featured Movie 2" height="300" src="https://storage.googleapis.com/a1aa/image/VWrpW5UeIjUxSSFBrwAKRKeVELEG2DN84FL GFsTQU8uYJi6TA.jpg" width="200"/>
-        <p>
-         Featured Movie 2
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/film/featured-movie-3">
-        <img alt="Featured Movie 3" height="300" src="https://storage.googleapis.com/a1aa/image/CHZZMf7iZD2IKKfqLjv07fexIz6XJc3luHCnn2rwAy1WlIqPB.jpg" width="200"/>
-        <p>
-         Featured Movie 3
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/film/featured-movie-4">
-        <img alt="Featured Movie 4" height="300" src="https://storage.googleapis.com/a1aa/image/snLV9FJ7WX4aBZc77mg4B3ag3vkxi0PCYtqkBxbCSgOaioeJA.jpg" width="200"/>
-        <p>
-         Featured Movie 4
-        </p>
-      </a>
-     </div>
+  <head>
+    <title>TV WebOS System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        cursor: url('cursour.png'), auto;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #1a1a1a;
+      }
+      .header .logo {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .header .search-bar {
+        display: flex;
+        align-items: center;
+      }
+      .header .search-bar input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .header .search-bar button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        padding: 10px 0;
+      }
+      .nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .nav a:hover {
+        background-color: #555;
+      }
+      .content {
+        padding: 20px;
+      }
+      .content .section {
+        margin-bottom: 40px;
+      }
+      .content .section h2 {
+        margin-bottom: 20px;
+      }
+      .content .section .items {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .content .section .item {
+        width: 200px;
+        margin: 10px;
+        text-align: center;
+      }
+      .content .section .item img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .content .section .item p {
+        margin-top: 10px;
+      }
+
+      .title {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="installer/WebOS/webos.png" style="height: 42px; width: auto;" alt="webos logo">
+      </div>
+      <div class="search-bar">
+        <input placeholder="Search..." type="text"/>
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
-   </div>
-   <div class="section">
-    <h2>
-     Live TV
-    </h2>
-    <div class="items">
-     <div class="item">
-      <a href="https://kinogo.ec/tv/news-channel">
-        <img alt="News Channel" height="300" src="https://storage.googleapis.com/a1aa/image/nFv0dr0MeZV9VynnItKqkBnfzkSuEsj2Sd48fFwfbTKJmIqPB.jpg" width="200"/>
-        <p>
-         News Channel
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/sports-channel">
-        <img alt="Sports Channel" height="300" src="https://storage.googleapis.com/a1aa/image/pUVwdk8evS0CSaeI6eqkAlGidstfUwSn0Rm3wYlcySpSmIqPB.jpg" width="200"/>
-        <p>
-         Sports Channel
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/cooking-channel">
-        <img alt="Cooking Channel" height="300" src="https://storage.googleapis.com/a1aa/image/mH7LSCz0eVzBJSD2WXc5UJoBePldpSrRURrxb4Y5E9ZfSE1nA.jpg" width="200"/>
-        <p>
-         Cooking Channel
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/wildlife-channel">
-        <img alt="Wildlife Channel" height="300" src="https://storage.googleapis.com/a1aa/image/UHxvASqc9T7fXK9xs2RGu9mV0QwMrodSPCG1xqQ3bQ4zER9JA.jpg" width="200"/>
-        <p>
-         Wildlife Channel
-        </p>
-      </a>
-     </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="#">Live TV</a>
+      <a href="movies.html">Movies</a>
+      <a href="#">TV Shows</a>
+      <a href="apps.html">Apps</a>
+      <a href="settings.html">Settings</a>
+      <a href="https://www.google.com">Browser</a>
     </div>
-   </div>
-   <div class="section">
-    <h2>
-     Popular Movies
-    </h2>
-    <div class="items">
-     <div class="item">
-      <a href="https://kinogo.ec/film/popular-movie-1">
-        <img alt="Popular Movie 1" height="300" src="https://storage.googleapis.com/a1aa/image/eC4EfZbeWncdgp01Pb66hHG93pqKzdFd0Ty5ToGtnqaUTE1nA.jpg" width="200"/>
-        <p>
-         Popular Movie 1
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/film/popular-movie-2">
-        <img alt="Popular Movie 2" height="300" src="https://storage.googleapis.com/a1aa/image/iAPkl67IA3LhKNAqQdHcOaNesixh44RsH49YjY6cn2atER9JA.jpg" width="200"/>
-        <p>
-         Popular Movie 2
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href=" https://kinogo.ec/film/popular-movie-3">
-        <img alt="Popular Movie 3" height="300" src="https://storage.googleapis.com/a1aa/image/ZgLVYn2qPWphPRYtagdZZMrmP4N0rSxlgVsCYtx2le5uER9JA.jpg" width="200"/>
-        <p>
-         Popular Movie 3
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/film/popular-movie-4">
-        <img alt="Popular Movie 4" height="300" src="https://storage.googleapis.com/a1aa/image/H7wogT2P6CbtCVW6LtoJhAphL6JJu0fQ7qDRjGDUfYWrJi6TA.jpg" width="200"/>
-        <p>
-         Popular Movie 4
-        </p>
-      </a>
-     </div>
+    <div class="content">
+      <div class="section">
+        <h2>Popular Movies</h2>
+        <div class="items">
+          {% for movie in movies %}
+            <div class="item">
+              <a href="https://www.themoviedb.org/movie/{{ movie.id }}">
+                <img alt="{{ movie.title }}" height="300" src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" width="200"/>
+                <p class="title">{{ movie.title }}</p>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-   </div>
-   <div class="section">
-    <h2>
-     TV Shows
-    </h2>
-    <div class="items">
-     <div class="item">
-      <a href="https://kinogo.ec/tv/tv-show-1">
-        <img alt="TV Show 1" height="300" src="https://storage.googleapis.com/a1aa/image/oKQw1gXPB76NLph8XvQYMETnX1vJHGZgGLJhBvAUKkEXioeJA.jpg" width="200"/>
-        <p>
-         TV Show 1
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/tv-show-2">
-        <img alt="TV Show 2" height="300" src="https://storage.googleapis.com/a1aa/image/xYIt37SLHh5ENRvJAoBONDaeG63tH6d1Yt1us4Nb6K4wER9JA.jpg" width="200"/>
-        <p>
-         TV Show 2
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/tv-show-3">
-        <img alt="TV Show 3" height="300" src="https://storage.googleapis.com/a1aa/image/aIXrNgzuRb7eC603e8Rd3rwDrIe1RBIW6DRaKCBdZojvSE1nA.jpg" width="200"/>
-        <p>
-         TV Show 3
-        </p>
-      </a>
-     </div>
-     <div class="item">
-      <a href="https://kinogo.ec/tv/tv-show-4">
-        <img alt="TV Show 4" height="300" src="https://storage.googleapis.com/a1aa/image/0lIhtAiBinK5GBn4M9mT0FazMVIgA1WcfV8dXlJqat8yER9JA.jpg" width="200"/>
-        <p>
-         TV Show 4
-        </p>
-      </a>
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
+    <script src="theme.js"></script>
+  </body>
 </html>
