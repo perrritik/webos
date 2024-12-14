@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Регистрация пользователя
+        function registerUser(event) {
+            event.preventDefault();
+
+            const nicknameInput = document.getElementById("register-nickname").value;
+            const passwordInput = document.getElementById("register-password").value;
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            if (users.some(u => u.nickname === nicknameInput)) {
+                alert("Этот nickname уже занят.");
+                return;
+            }
+
+            users.push({ nickname: nicknameInput, password: passwordInput });
+            localStorage.setItem('users', JSON.stringify(users)); // Сохранение в localStorage
+            alert("Регистрация успешна!");
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+        <form onsubmit="registerUser(event)">
+            <div class="mb-4">
+                <label for="register-nickname" class="block text-gray-700 font-medium mb-2">Nickname</label>
+                <input type="text" id="register-nickname" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-6">
+                <label for="register-password" class="block text-gray-700 font-medium mb-2">Password</label>
+                <input type="password" id="register-password" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg">Register</button>
+        </form>
+        <div class="mt-4 text-center">
+            <p>У вас уже есть аккаунт? <a href="login.html" class="text-blue-600 hover:underline">Войти</a></p>
+        </div>
+    </div>
+</body>
+</html>

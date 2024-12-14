@@ -1,0 +1,178 @@
+<html>
+ <head>
+  <title>
+   TV WebOS System - Settings
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            cursor: url('cursour.png'), auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .header .search-bar input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .header .search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content .section {
+            margin-bottom: 40px;
+        }
+        .content .section h2 {
+            margin-bottom: 20px;
+        }
+        .content .section .items {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content .section .item {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+        .content .section .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .content .section .item p {
+            margin-top: 10px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="logo">
+    <img src="webos.png" style="height: 42px; width: auto;" alt="webos logo">
+   </div>
+   <div class="search-bar">
+    <input placeholder="Search..." type="text"/>
+    <button>
+     <i class="fas fa-search">
+     </i>
+    </button>
+   </div>
+  </div>
+  <div class="nav">
+   <a href="home.html">
+    Home
+   </a>
+   <a href="#">
+    Live TV
+   </a>
+   <a href="#">
+    Movies
+   </a>
+   <a href="#">
+    TV Shows
+   </a>
+   <a href="apps.html">
+    Apps
+   </a>
+   <a href="settings.html">
+    Settings
+   </a>
+  </div>
+  <div class="content">
+   <div class="section">
+    <h2>
+     Useful Settings
+    </h2>
+    <div class="items">
+     <div class="item">
+      <img alt="Network settings icon with a Wi-Fi symbol" height="300" src="https://storage.googleapis.com/a1aa/image/0lIhtAiBinK5GBn4M9mT0FazMVIgA1WcfV8dXlJqat8yER9JA.jpg" width="200"/>
+      <p>
+       Network Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Display settings icon with a monitor and brightness symbol" height="300" src="https://storage.googleapis.com/a1aa/image/4hvhSGmZ4FLOGV2JgE4ascxnGO8CHDWzkCF4yAngTllrioeJA.jpg" width="200"/>
+      <p>
+       Display Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Sound settings icon with a speaker and sound waves" height="300" src="https://storage.googleapis.com/a1aa/image/zBpy0AyZoLbXKVrFNkaHO2zH5SphKuLBS4zNiLg29kKrioeJA.jpg" width="200"/>
+      <p>
+       Sound Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Account settings icon with a user profile symbol" height="300" src="https://storage.googleapis.com/a1aa/image/DdD3n20EN7qyEBehUlFB90ugG1QycF8qaoGxJyzs7sxUFR9JA.jpg" width="200"/>
+      <p>
+       Account Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Privacy settings icon with a lock symbol" height="300" src="https://storage.googleapis.com/a1aa/image/LqU14yVn0rpFLdYqGK2MfDpjOsO4ItvFeNk6E0AOyd7oKi6TA.jpg" width="200"/>
+      <p>
+       Privacy Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="System update settings icon with a gear and refresh symbol" height="300" src="https://storage.googleapis.com/a1aa/image/p67J2MyYHcqcGtpPKhfpBxnUwy7PcZJPLEGjlPkNwdVTFR9JA.jpg" width="200"/>
+      <p>
+       System Update
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Language settings icon with a globe and language symbols" height="300" src="https://storage.googleapis.com/a1aa/image/TW8csQN3fbQNQyAw7ndrL2fQB15vJMJXQXZBsos28SrrKi6TA.jpg" width="200"/>
+      <p>
+       Language Settings
+      </p>
+     </div>
+     <div class="item">
+      <img alt="Parental control settings icon with a shield and family symbol" height="300" src="https://storage.googleapis.com/a1aa/image/CYe1EInCRlWaSivk0gZZBkOQ42XxYFWGi773ySwfj9dnKi6TA.jpg" width="200"/>
+      <p>
+       Parental Controls
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
