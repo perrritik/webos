@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Link Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            width: 100%;
+            padding-bottom: 50px;
+            scrollbar-width: thin;
+            z-index: 99;
+        }
+        .scroll-container::-webkit-scrollbar {
+            height: 10px;
+            z-index: 99;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #007BFF;
+            border-radius: 5px;
+            z-index: 99;
+        }
+        .link-container {
+            display: flex;
+            gap: 20px;
+            z-index: 99;
+        }
+        .link-container a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            text-decoration: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 99;
+        }
+        .link-container a:hover {
+            transform: scale(1.1);
+            z-index: 99;
+        }
+
+        background-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1; /* Make sure the video is behind other content */
+                cursor: url('cursour.png');
+            }
+            
+        /* Enable mouse wheel horizontal scrolling */
+        .scroll-container {
+            scroll-behavior: smooth;
+            z-index: 99;
+        }
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollContainer = document.querySelector(".scroll-container");
+            scrollContainer.addEventListener("wheel", (event) => {
+                event.preventDefault();
+                scrollContainer.scrollLeft += event.deltaY;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    
+        <script>
+            const cursor = document.querySelector('.custom-cursor');
+    
+            window.addEventListener('mousemove', function(e) {
+                cursor.style.top = `${e.clientY}px`;
+                cursor.style.left = `${e.clientX}px`;
+            });
+        </script>
+        <video autoplay muted loop id="background-video">
+            <source src="backgroundvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    <div class="scroll-container">
+        <div class="link-container">
+            <a href="#" style=" z-index: 99; background-size: 170%; background-image: url('https://img.freepik.com/free-vector/youtube-player-icon-with-flat-design_23-2147837753.jpg');"> </a>
+            <a href="#" style="background-image: url('image2.jpg');">2</a>
+            <a href="#" style="background-image: url('image3.jpg');">3</a>
+            <a href="#" style="background-image: url('image4.jpg');">4</a>
+            <a href="#" style="background-image: url('image5.jpg');">5</a>
+            <a href="#" style="background-image: url('image6.jpg');">6</a>
+            <a href="#" style="background-image: url('image7.jpg');">7</a>
+            <a href="#" style="background-image: url('image8.jpg');">8</a>
+            <a href="#" style="background-image: url('image9.jpg');">9</a>
+            <a href="#" style="background-image: url('image10.jpg');">10</a>
+            <a href="#" style="background-image: url('image11.jpg');">11</a>
+            <a href="#" style="background-image: url('image12.jpg');">12</a>
+            <a href="#" style="background-image: url('image13.jpg');">13</a>
+            <a href="#" style="background-image: url('image14.jpg');">14</a>
+            <a href="#" style="background-image: url('image15.jpg');">15</a>
+        </div>
+    </div>
+</body>
+</html>

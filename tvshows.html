@@ -1,54 +1,83 @@
-<html>
- <head>
-  <title>
-   TV WebOS System - Apps
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TV WebOS System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Lexend+Deca&family=Poiret+One&family=Tektur:wght@400..900&display=swap');
+        body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #000;
             color: #fff;
-            cursor: url('cursour.png'), auto;
+            cursor: none;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .custom-cursor {
+                position: absolute;
+                top: 50%; /* Позиция по вертикали */
+                left: 50%; /* Позиция по горизонтали */
+                width: 64px; /* Ширина курсора */
+                height: 64px; /* Высота курсора */
+                background-image: url('https://cdn.discordapp.com/attachments/1271646908330541096/1317881656941477980/cursour.png?ex=67604c70&is=675efaf0&hm=116115d87387ceececd54e31b5b69ea9cfcb87c1243157e3a917164c0cc18d74&');
+                background-size: cover;
+                pointer-events: none; /* Игнорировать взаимодействие с элементами */
+                z-index: 9999;
+            }
+        a {
+            cursor: none; /* Отключаем стандартный курсор */
+        }
+
+        a:hover {
+            cursor: none; /* Убираем стандартный курсор на hover */
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Make sure the video is behind other content */
+            cursor: url('cursour.png');
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            z-index: 0; /* Ensure it's above the video but below other content */
+            cursor: url('cursour.png');
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #1a1a1a;
+            background-color: rgba(0, 0, 0, 0.65);
+            position: relative;
+            z-index: 1; /* Ensure header is above the overlay */
+            cursor: url('cursour.png');
         }
         .header .logo {
             font-size: 24px;
             font-weight: 700;
+            cursor: url('cursour.png');
         }
-        .header .search-bar {
-            display: flex;
-            align-items: center;
-        }
-        .header .search-bar input {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .header .search-bar button {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-        }
+      
         .nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.35);
             padding: 10px 0;
+            cursor: url('cursour.png');
         }
         .nav a {
             color: #fff;
@@ -56,46 +85,60 @@
             padding: 10px 20px;
             margin: 0 10px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            background-color: rgba(0, 0, 0, 0.35);
+            cursor: url('cursour.png');
         }
         .nav a:hover {
-            background-color: #555;
+            background-color: rgba(0, 0, 0, 0.35);
+            cursor: url('cursour.png');
         }
         .content {
             padding: 20px;
+            position: relative;
+            z-index: 1; /* Ensure content is above the overlay */
+            cursor: url('cursour.png');
         }
         .content .section {
             margin-bottom: 40px;
+            cursor: url('cursour.png');
+            font-family: "Tektur", sans-serif;
         }
         .content .section h2 {
             margin-bottom: 20px;
+            cursor: url('cursour.png');
+            font-family: "Tektur", sans-serif;
         }
         .content .section .items {
             display: flex;
             flex-wrap: wrap;
+            cursor: url('cursour.png');
+            font-family: "Tektur", sans-serif;
         }
         .content .section .item {
             width: 200px;
             margin: 10px;
             text-align: center;
+            transition: transform 0.3s ease;
+            cursor: url('cursour.png');
+            font-family: "Tektur", sans-serif;
+            font-size: 20px;
+        }
+        .content .section .item:hover {
+            transform: scale(1.05);
+            cursor: url('cursour.png');
+            font-family: "Tektur", sans-serif;
         }
         .content .section .item img {
             width: 100%;
             border-radius: 10px;
+            cursor: url('cursour.png');
         }
         .content .section .item p {
             margin-top: 10px;
+            font-family: "Tektur", sans-serif;
         }
-        .content .section .item a {
-            text-decoration: none;
-            color: #fff;
-        }
-        .content .section .item a:hover {
-            color: #ccc;
-        }
-
-                /* Темная тема */
-                body.dark-theme {
+        /* Темная тема */
+        body.dark-theme {
             background-color: #121212;
             color: #fff;
         }
@@ -104,44 +147,77 @@
             background-color: #f9f9f9;
             color: #000;
         }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="logo">
-    <img src="webos.png" style="height: 42px; width: auto;" alt="webos logo">
-   </div>
-   <div class="search-bar">
-    <input placeholder="Search..." type="text"/>
-    <button>
-     <i class="fas fa-search">
-     </i>
-    </button>
-   </div>
-  </div>
-  <div class="nav">
-    <a href="home.html">
-     Home
-    </a>
-    <a href="#">
-     Live TV
-    </a>
-    <a href="movies.html">
-     Movies
-    </a>
-    <a href="#">
-     TV Shows
-    </a>
-    <a href="apps.html">
-     Apps
-    </a>
-    <a href="settings.html">
-     Settings
-    </a>
-    <a href="https://www.google.com">
-        Browser
-       </a>
-   </div>
+        .header, .nav {
+    position: relative;
+    z-index: 2; /* Задайте больший z-index для этих элементов */
+}
+
+.p {
+  cursor: url('cursour.png');
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Убедитесь, что overlay имеет z-index меньше, чем у кнопок */
+    cursor: url('cursour.png');
+}
+
+
+  #zagolovok {
+    font-family: "Poiret One", serif;
+    font-size: 24px;
+    font-weight: 700; /* Сделаем заголовки жирными */
+    color: white;
+    margin-bottom: 10px;
+    cursor: url('cursour.png');
+  }
+
+  .navi {
+    margin-right: 150px;
+    cursor: url('cursour.png');
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 26px;
+    font-family: "Lexend Deca", sans-serif;
+
+  }
+    </style>
+<body>
+    <div class="custom-cursor"></div>
+    
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
+
+        window.addEventListener('mousemove', function(e) {
+            cursor.style.top = `${e.clientY}px`;
+            cursor.style.left = `${e.clientX}px`;
+        });
+    </script>
+    <video autoplay muted loop id="background-video">
+        <source src="https://cdn.discordapp.com/attachments/1271646908330541096/1317881656333566013/backgroundvideo.mp4?ex=67604c6f&is=675efaef&hm=39a66575b37769d67c1f5bea2c5211011fbfb7a29da2d3f23479ca94fa89974a&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="header">
+        <div class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1271646908330541096/1317881657835126885/webos.png?ex=67604c70&is=675efaf0&hm=0b79e70652ba3391aed2cfe0645f5dca3e8218aff695ec6bc92313505a92ecd6&" style="height: 42px; width: auto;" alt="webos logo">
+        </div>
+        <a class='navi' href="home.html">Home</a>
+        <a class='navi'  href="#">Live TV</a>
+        <a  class='navi' href="movies.html">Movies</a>
+        <a class='navi'  href="tvshows.html">TV Shows</a>
+        <a  class='navi' href="apps.html">Apps</a>
+        <a  class='navi' href="#">Settings</a>
+        <a  class='navi' href="https://www.google.com">Browser</a>
+      </div>
+    </div>
   <div class="content">
    <div class="section">
     <h2>
