@@ -4,7 +4,7 @@
 Запустите проект.
 =================================================
 
-======================ENGLISH=====================
+======================ENGLISH=================
 Open Virtual Studio Code/Another program you are using.
 Create and paste all files.
 Start the project.
